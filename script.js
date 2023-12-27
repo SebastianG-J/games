@@ -61,3 +61,10 @@ function checkAnswer(selectedButton) {
 
 // Start the game
 displayQuestion();
+
+function playAgain() {
+    currentQuestion = 0;
+    displayQuestion();
+    document.getElementById("result").textContent = "";
+    document.getElementById("play-again").style.display = "none";
+}
