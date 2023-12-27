@@ -45,6 +45,10 @@ function checkAnswer(selectedButton) {
         resultElement.textContent = questions[currentQuestion].comments.correct;
     } else {
         resultElement.textContent = questions[currentQuestion].comments.incorrect;
+        setTimeout(function () {
+            resultElement.textContent = "Game Over!";
+            document.getElementById("play-again").style.display = "block";
+        }, 2000); // Display "Game Over!" after 2 seconds
     }
 
     // Move to the next question or end the game
@@ -54,8 +58,8 @@ function checkAnswer(selectedButton) {
         setTimeout(displayQuestion, 2000); // Display next question after 2 seconds
     } else {
         setTimeout(function () {
-        resultElement.textContent = "Game Over!";
-        document.getElementById("play-again").style.display = "block";
+            resultElement.textContent = "Game Over!";
+            document.getElementById("play-again").style.display = "block";
         }, 2000); // Display "Game Over!" after 2 seconds
     }
 }
